@@ -15,10 +15,6 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.secret_key = "/said1234"
 api = Api(app)
 
-#create a table if it's not exist
-@app.before_first_request
-def create_tables():
-    db.create_all()
 
 #to avoid fast expiration of secet key of athentification jwt
 #JWT configuration
